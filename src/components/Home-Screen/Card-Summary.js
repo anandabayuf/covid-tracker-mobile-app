@@ -1,10 +1,8 @@
 import React from 'react';
 import { View, StyleSheet, Image } from "react-native"
-import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
+import { Card, Title, Paragraph } from 'react-native-paper';
 import { textPrimary } from '../../utils/Color-Pallete';
-import Navigasi from '../Navigasi';
-
-const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
+import Navigasi from '../App-Bar';
 
 const CardSummary = (props) => {
     const cardStyle = {
@@ -13,15 +11,14 @@ const CardSummary = (props) => {
     }
 
     const icon = props.title === "Total Confirmed" ? require('../../assets/icons/confirmed.png') : 
-    props.title === "Total Recovered" ?  require('../../assets/icons/recovered.png') : 
-    require('../../assets/icons/deaths.png')
+        props.title === "Total Recovered" ?  require('../../assets/icons/recovered.png') : 
+        require('../../assets/icons/deaths.png')
     
     return (
         <View style={style.card}>
             <Card mode='elevated' style={cardStyle}>
                 <Card.Content style={{flexDirection: "row"}}>
                     <View style={{flex: 1, alignContent: 'center'}}>
-                        {/* <Image source={require('../../assets/icons/recovered.png')} style={style.image}/> */}
                         <Image source={icon} style={style.image}/>
                     </View>
                     <View style={{flex: 1, alignContent: 'center', justifyContent: 'center'}}>
