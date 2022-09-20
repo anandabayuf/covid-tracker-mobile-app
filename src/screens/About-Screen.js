@@ -2,23 +2,19 @@ import React from 'react';
 import { View, StyleSheet, SafeAreaView, Text, StatusBar, ScrollView } from "react-native"
 import {backgroundColor, textPrimary} from "../utils/Color-Pallete"
 
-import CardSummary from '../components/Home-Screen/Card-Summary';
-
-//import provider
-
-const HomeScreen = () => {
-    //use state
-
-    //buat function untuk implementasi provider
-
-
-
+const AboutScreen = () => {
+    const teams = [
+        {
+            pic: '../../assets/images/bayu.png',
+            name: 'Bayu',
+            
+        }
+    ]
     return (
         <SafeAreaView style={style.container}>
             <ScrollView>
-                <Text style={style.title}>Summary</Text>
-                {/* untuk komponen confirmed, recovered, dan deaths ditambah di bawah ini */}
-                <CardSummary title="Total Deaths" data="123" />
+                <Text style={style.title}>About</Text>
+                <Text style={style.title}>About</Text>
             </ScrollView>
         </SafeAreaView>
     )
@@ -38,4 +34,4 @@ const style = StyleSheet.create({
     }
 })
 
-export default HomeScreen;
+export default AboutScreen;

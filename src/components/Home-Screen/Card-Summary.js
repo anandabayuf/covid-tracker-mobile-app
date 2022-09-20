@@ -11,13 +11,17 @@ const CardSummary = (props) => {
         backgroundColor:  props.title === "Total Confirmed" ? "#ffc107" : props.title === "Total Recovered" ?  "#198754" : "#dc3545"
     }
 
+    const icon = props.title === "Total Confirmed" ? require('../../assets/icons/confirmed.png') : 
+    props.title === "Total Recovered" ?  require('../../assets/icons/recovered.png') : 
+    require('../../assets/icons/deaths.png')
+    
     return (
         <View style={style.card}>
             <Card mode='elevated' style={cardStyle}>
                 <Card.Content style={{flexDirection: "row"}}>
                     <View style={{flex: 1, alignContent: 'center'}}>
                         {/* <Image source={require('../../assets/icons/recovered.png')} style={style.image}/> */}
-                        <Image source={require(props.icon)} style={style.image}/>
+                        <Image source={icon} style={style.image}/>
                     </View>
                     <View style={{flex: 1, alignContent: 'center', justifyContent: 'center'}}>
                         <View style={{marginBottom: 10}}>
