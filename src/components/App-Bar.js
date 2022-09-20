@@ -16,7 +16,6 @@ const AppBar = () => (
 const style = StyleSheet.create({
   navigasi: {
       backgroundColor: backgroundColor,
-      borderBottomColor: textPrimary,
       width: "100%",
       margin: 0,
       padding: 0
