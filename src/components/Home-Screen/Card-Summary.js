@@ -16,14 +16,15 @@ const CardSummary = (props) => {
             <Card mode='elevated' style={cardStyle}>
                 <Card.Content style={{flexDirection: "row"}}>
                     <View style={{flex: 1, alignContent: 'center'}}>
-                        <Image source={require('../../assets/icons/recovered.png')} style={style.image}/>
+                        {/* <Image source={require('../../assets/icons/recovered.png')} style={style.image}/> */}
+                        <Image source={require(props.icon)} style={style.image}/>
                     </View>
                     <View style={{flex: 1, alignContent: 'center', justifyContent: 'center'}}>
                         <View style={{marginBottom: 10}}>
                             <Paragraph style={style.titleText}>{props.title}</Paragraph>
                         </View>
                         <View style={{alignSelf: 'flex-end'}}>
-                            <Title style={style.dataText}>1.000.000</Title>
+                            <Title style={style.dataText}>{props.data}</Title>
                         </View>
                     </View>
                 </Card.Content>

@@ -4,7 +4,15 @@ import {backgroundColor, textPrimary} from "../utils/Color-Pallete"
 
 import CardSummary from '../components/Home-Screen/Card-Summary';
 
+//import provider
+
 const HomeScreen = () => {
+    //use state
+
+    //buat function untuk implementasi provider
+
+    
+
     return (
         <SafeAreaView style={style.container}>
             <ScrollView>
