@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StyleSheet, Image } from "react-native"
 import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
 import { textPrimary } from '../../utils/Color-Pallete';
+import Navigasi from '../Navigasi';
 
 const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
 

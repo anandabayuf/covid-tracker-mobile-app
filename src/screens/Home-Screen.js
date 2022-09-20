@@ -7,6 +7,7 @@ import recovered from "../assets/icons/recovered.png";
 import { useEffect, useState } from "react"
 import { getAllSummary, getSummaryByCountry } from "../providers/Summary"
 import CardSummary from '../components/Home-Screen/Card-Summary';
+import Navigasi from '../components/Navigasi';
 
 //import provider
 
@@ -74,7 +75,8 @@ const HomeScreen = () => {
 
 
     return (
-        <SafeAreaView style={style.container}>
+        <SafeAreaView>
+            <Navigasi />
             <ScrollView>
                 <Text style={style.title}>Summary</Text>
                 {/* untuk komponen confirmed, recovered, dan deaths ditambah di bawah ini */}
