@@ -2,7 +2,6 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import { View } from 'react-native';
 import HomeScreen from './src/screens/Home-Screen';
-import NavBar from './src/components/Nav-Bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AppBar from './src/components/App-Bar';
