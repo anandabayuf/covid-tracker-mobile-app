@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "covid-tracker-mobile-app",
-    "slug": "covid-tracker-mobile-app",
+    "name": "covid tracker mobile app",
+    "slug": "covid tracker mobile app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -26,9 +26,6 @@
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.anandabayuf.covidtrackermobileapp"
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
