@@ -130,6 +130,7 @@ const style = StyleSheet.create({
         marginBottom: 30
     },
     textUpdate: {
+        marginTop: 10,
         alignSelf: "flex-end",
         fontSize: 12,
         color: "grey"
