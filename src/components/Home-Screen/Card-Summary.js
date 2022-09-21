@@ -19,7 +19,7 @@ const CardSummary = (props) => {
     
     return (
         <View style={style.card}>
-            <Card mode='elevated' style={cardStyle}>
+            <Card mode='elevated' elevation={5} style={cardStyle}>
                 <Card.Content style={{flexDirection: "row"}}>
                     <View style={{flex: 1, alignContent: 'center'}}>
                         <Image source={icon} style={style.image}/>

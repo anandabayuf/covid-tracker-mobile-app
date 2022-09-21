@@ -59,13 +59,13 @@ const AboutScreen = () => {
             <ScrollView>
                 <Text style={style.title}>About</Text>
                 <Text style={style.subTitle}>Team 2 - Juara Coding</Text>
-                {
+                {/* {
                     teams.map((person, index) => {
                         return (
                             <CardPerson key={index} name={person.name} wa={person.wa} email={person.email} pic={person.pic}/>
                         )
                     })
-                }
+                } */}
             </ScrollView>
         </SafeAreaView>
     )
