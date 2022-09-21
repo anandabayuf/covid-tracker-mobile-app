@@ -2,7 +2,6 @@ import React from 'react';
 import { View, StyleSheet, Image } from "react-native"
 import { Card, Title, Paragraph } from 'react-native-paper';
 import { textPrimary } from '../../utils/Color-Pallete';
-import Navigasi from '../App-Bar';
 
 const CardSummary = (props) => {
     const cardStyle = {
@@ -13,6 +12,10 @@ const CardSummary = (props) => {
     const icon = props.title === "Total Confirmed" ? require('../../assets/icons/confirmed.png') : 
         props.title === "Total Recovered" ?  require('../../assets/icons/recovered.png') : 
         require('../../assets/icons/deaths.png')
+
+    const numberWithCommas = (x) => {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
     
     return (
         <View style={style.card}>
@@ -26,7 +29,7 @@ const CardSummary = (props) => {
                             <Paragraph style={style.titleText}>{props.title}</Paragraph>
                         </View>
                         <View style={{alignSelf: 'flex-end'}}>
-                            <Title style={style.dataText}>{props.data}</Title>
+                            <Title style={style.dataText}>{numberWithCommas(props.data || 0)}</Title>
                         </View>
                     </View>
                 </Card.Content>
@@ -50,7 +53,7 @@ const style = StyleSheet.create({
     },
     dataText: {
         color: textPrimary,
-        fontSize: 24
+        fontSize: 22
     }
 })
 

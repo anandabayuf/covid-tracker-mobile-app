@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Appbar } from 'react-native-paper';
 import { View, StyleSheet, Image } from "react-native";
-import { backgroundColor, otherColor, textPrimary, textSecondary } from '../utils/Color-Pallete';
+import { backgroundColor, textPrimary, textSecondary } from '../utils/Color-Pallete';
 
 const AppBar = () => (
-  <View style={style.navigasi}>
-    <Appbar.Header elevated={true}>
+  <View style={style.navigation}>
+    <Appbar.Header elevated={true} style={{backgroundColor: backgroundColor}}>
       <Appbar.Action icon="menu" onPress={() => {}} />
       <Image source={require('../assets/icons/covid-tracker-logo.png')} style={style.image}/>
       <Appbar.Content title="Covid Tracker" />
@@ -14,8 +14,8 @@ const AppBar = () => (
 );
 
 const style = StyleSheet.create({
-  navigasi: {
-      backgroundColor: backgroundColor,
+  navigation: {
+      backgroundColor: textSecondary,
       width: "100%",
       margin: 0,
       padding: 0
