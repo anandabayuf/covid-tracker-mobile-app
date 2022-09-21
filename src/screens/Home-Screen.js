@@ -4,6 +4,7 @@ import { backgroundColor, textPrimary, textSecondary } from "../utils/Color-Pall
 import { getAllSummary, getSummaryByCountry } from "../providers/Summary"
 import CardSummary from '../components/Home-Screen/Card-Summary';
 import Flag from 'react-native-flags';
+import Footer from '../components/Footer';
 
 const HomeScreen = () => {
     const [summary, setSummary] = useState({
@@ -55,61 +56,65 @@ const HomeScreen = () => {
     }, []);
 
     return (
-        <SafeAreaView style={style.container}>
+        <SafeAreaView>
             <ScrollView>
-                <View style={style.section}>
-                    <Text style={style.title}>Summary</Text>
+                <View style={style.container}>
+                    <View style={style.section}>
+                        <Text style={style.title}>Summary</Text>
+                        {
+                            summary.isLoading ?
+                            <ActivityIndicator size="large" color={textSecondary}/>
+                            :
+                            <View>
+                                <CardSummary
+                                    title="Total Confirmed"
+                                    data={summary.confirmed}
+                                />
+                                <CardSummary
+                                    title="Total Recovered"
+                                    data={summary.recovered}
+                                />
+                                <CardSummary
+                                    title="Total Deaths"
+                                    data={summary.deaths}
+                                />
+                                <Text style={style.textUpdate}>Last update: {(new Date(summary.lastUpdate)).toLocaleString('id')}</Text>
+                            </View>
+                        }
+                    </View>
+                    <Text style={style.title}>
+                        Summary: {" "}
+                        <Flag
+                            code="ID"
+                            size={32}
+                        />
+                        {" "}Indonesia
+                    </Text>
+                    
                     {
-                        summary.isLoading ?
+                        summaryId.isLoading ?
                         <ActivityIndicator size="large" color={textSecondary}/>
                         :
                         <View>
                             <CardSummary
                                 title="Total Confirmed"
-                                data={summary.confirmed}
+                                data={summaryId.confirmed}
                             />
                             <CardSummary
                                 title="Total Recovered"
-                                data={summary.recovered}
+                                data={summaryId.recovered}
                             />
                             <CardSummary
                                 title="Total Deaths"
-                                data={summary.deaths}
+                                data={summaryId.deaths}
                             />
-                            <Text style={style.textUpdate}>Last update: {(new Date(summary.lastUpdate)).toLocaleString('id')}</Text>
+                            <Text style={style.textUpdate}>Last update: {(new Date(summaryId.lastUpdate)).toLocaleString('id')}</Text>
                         </View>
                     }
                 </View>
-                <Text style={style.title}>
-                    Summary: {" "}
-                    <Flag
-                        code="ID"
-                        size={32}
-                    />
-                    {" "}Indonesia
-                </Text>
-                
-                {
-                    summaryId.isLoading ?
-                    <ActivityIndicator size="large" color={textSecondary}/>
-                    :
-                    <View>
-                        <CardSummary
-                            title="Total Confirmed"
-                            data={summaryId.confirmed}
-                        />
-                        <CardSummary
-                            title="Total Recovered"
-                            data={summaryId.recovered}
-                        />
-                        <CardSummary
-                            title="Total Deaths"
-                            data={summaryId.deaths}
-                        />
-                        <Text style={style.textUpdate}>Last update: {(new Date(summaryId.lastUpdate)).toLocaleString('id')}</Text>
-                    </View>
-                }
+                <Footer />
             </ScrollView>
+            
         </SafeAreaView>
     )
 }
@@ -119,6 +124,7 @@ const style = StyleSheet.create({
         flex: 1,
         flexDirection: "column",
         paddingHorizontal: 30,
+        paddingVertical: 10,
         backgroundColor: backgroundColor
     },
     title: {

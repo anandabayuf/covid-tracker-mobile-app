@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StyleSheet, SafeAreaView, Text, StatusBar, ScrollView } from "react-native"
 import {backgroundColor, textPrimary, textSecondary} from "../utils/Color-Pallete"
 import CardPerson from '../components/About-Screen/Card-Person';
+import Footer from '../components/Footer';
 
 const AboutScreen = () => {
     const teams = [
@@ -55,17 +56,20 @@ const AboutScreen = () => {
         }
     ]
     return (
-        <SafeAreaView style={style.container}>
+        <SafeAreaView>
             <ScrollView>
-                <Text style={style.title}>About</Text>
-                <Text style={style.subTitle}>Team 2 - Juara Coding</Text>
-                {/* {
-                    teams.map((person, index) => {
-                        return (
-                            <CardPerson key={index} name={person.name} wa={person.wa} email={person.email} pic={person.pic}/>
-                        )
-                    })
-                } */}
+                <View style={style.container}>
+                    <Text style={style.title}>About</Text>
+                    <Text style={style.subTitle}>Team 2 - Juara Coding</Text>
+                    {
+                        teams.map((person, index) => {
+                            return (
+                                <CardPerson key={index} name={person.name} wa={person.wa} email={person.email} pic={person.pic}/>
+                            )
+                        })
+                    }
+                </View>
+                <Footer />
             </ScrollView>
         </SafeAreaView>
     )
@@ -75,7 +79,8 @@ const style = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: "column",
-        paddingHorizontal: 10,
+        paddingHorizontal: 20,
+        paddingVertical: 10,
         backgroundColor: backgroundColor
     },
     title: {

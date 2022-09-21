@@ -3,10 +3,10 @@ import { Appbar } from 'react-native-paper';
 import { View, StyleSheet, Image } from "react-native";
 import { backgroundColor, textPrimary, textSecondary } from '../utils/Color-Pallete';
 
-const AppBar = () => (
+const AppBar = ({ navigation }) => (
   <View style={style.navigation}>
     <Appbar.Header elevated={true} style={{backgroundColor: backgroundColor}}>
-      <Appbar.Action icon="menu" onPress={() => {}} />
+      <Appbar.Action icon="menu" onPress={() => {navigation.openDrawer()}} />
       <Image source={require('../assets/icons/covid-tracker-logo.png')} style={style.image}/>
       <Appbar.Content title="Covid Tracker" />
     </Appbar.Header>
