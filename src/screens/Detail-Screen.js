@@ -48,7 +48,7 @@ const DetailScreen = () => {
     }, [])
 
     return (
-        <SafeAreaView style={{flex: 1}}>
+        <SafeAreaView style={{flex: 1, backgroundColor: backgroundColor}}>
             <ScrollView>
                 <View style={style.container}>
                     <Text style={style.title}>Detail Covid 19</Text>
